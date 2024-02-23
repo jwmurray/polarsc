@@ -3,7 +3,7 @@
 */
 use clap::Parser;
 use polars::prelude::*;
-use polarsc::calculate;
+use polarsc::read_csv;
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = "A CLI tool that wrpas Polars code.")]
@@ -14,7 +14,7 @@ struct Cli {
 
 fn main() {
     let _args = Cli::parse();
-    let result = calculate().unwrap();
+    let result = read_csv().unwrap();
     println!("{:?}", result);
 
 }

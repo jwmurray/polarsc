@@ -26,8 +26,8 @@ use std::vec;
 use::polars::prelude::*;
 
 // Define the main function that returns a Result type.
-// If evertything is OK, it returns `()`, otherwise it returns a PolarsError.
-pub fn calculate() ->Result<DataFrame, PolarsError> {
+// If evertything is OK, it returns `(df)`, otherwise it returns a PolarsError.
+pub fn read_csv() ->Result<DataFrame, PolarsError> {
     // Read the CSV file using the polars::prelude::CsvReader::from_path method
     let df = LazyCsvReader::new("src/data/iris.csv")
         .has_header(true)
